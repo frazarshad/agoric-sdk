@@ -46,7 +46,19 @@ jobs:
                 summary: `Synthetic check capturing the result of the <a href="${context.payload.workflow_run.html_url}">integration-test workflow run</a>`,
               }
             });
+            const check2 = await github.rest.checks.create({
+              ...context.repo,
+              head_sha,
+              name: "integration-test-result",
+              status: "in_progress",
+              external_id,
+              output: {
+                title: "Integration Test Aggregate Result",
+                summary: `Synthetic check capturing the result of the <a href="${context.payload.workflow_run.html_url}">integration-test workflow run</a>`,
+              }
+            });
             console.log(JSON.stringify(check, null, 2));
+            console.log(JSON.stringify(check2, null, 2));
             return check.data.id;
   update-check:
     runs-on: ubuntu-latest
