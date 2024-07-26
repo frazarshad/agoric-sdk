@@ -30,10 +30,10 @@ jobs:
             console.log(JSON.stringify(runs, null, 2));
             const run = descRuns[0];
 
-            if (run) {
+            //if (run) {
               // Check already exists.
-              return run.id;
-            }
+              //return run.id;
+            //}
 
             const check = await github.rest.checks.create({
               ...context.repo,
