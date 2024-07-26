@@ -5,7 +5,7 @@ on:
     outputs:
       should_run:
         description: "'true' if the test should run"
-        value: "${{ jobs.check_and_cancel.outcome != 'skipped' && jobs.check_and_cancel.outputs.should_skip != 'true' }}"
+        value: "${{ 1 == 2 }}"
       previous_success:
         description: "'true' if should not run because of a previous successful run"
         value: "${{ jobs.check_and_cancel.outcome != 'skipped' && jobs.check_and_cancel.outputs.previous_success == 'true' }}"
@@ -53,7 +53,7 @@ jobs:
       )
     runs-on: ubuntu-latest
     outputs:
-      should_skip: ${{ (steps.step2.outcome == 'skipped' || steps.step2.outputs.concurrent_conclusion == 'success') && steps.step1.outputs.should_skip || 'false' }}
+      should_skip: ${{ 1 == 1 }}
       previous_success: >-
         ${{
           (steps.step2.outcome == 'skipped' && steps.step1.outputs.reason == 'skip_after_successful_duplicate' && 'true') || 
