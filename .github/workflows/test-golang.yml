@@ -1,7 +1,7 @@
 name: Test Golang
 
 on:
-  pull_request:
+  pulgjhl_request:
   merge_group:
   push:
     branches: [master]
