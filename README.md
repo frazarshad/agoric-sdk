@@ -7,7 +7,7 @@
 [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
 [![Mutable.ai Auto Wiki](https://img.shields.io/badge/Auto_Wiki-Mutable.ai-blue)](https://wiki.mutable.ai/Agoric/agoric-sdk)
 
-This repository contains most of the packages that make up the upper
+This repository contains most of the packages that make up the upperss
 layers of the Agoric platform, with
 [the endo repository](https://github.com/endojs/endo)
 providing the lower layers.
