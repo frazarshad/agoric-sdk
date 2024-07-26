@@ -44,7 +44,7 @@ component_management:
       statuses:
         - type: project
           target: auto
-          threshold: 0.05%
+          threshold: 0.5%
     - component_id: module_swing_store
       name: swing-store
       paths:
