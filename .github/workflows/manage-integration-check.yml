@@ -10,6 +10,9 @@ jobs:
     outputs:
       check_id: ${{ steps.create-check.outputs.result }}
     steps:
+      - uses: GuillaumeFalourd/wait-sleep-action@v1
+        with:
+          time: '60' # for 60 seconds
       - name: Create check
         uses: actions/github-script@v7
         id: create-check
@@ -27,14 +30,11 @@ jobs:
             core.debug(`integration-test-result check runs: ${JSON.stringify(runs, null, 2)}`);
             const filtRuns = runs.filter(run => run.status !== 'completed');
             const descRuns = filtRuns.sort((a, b) => Date.parse(b.started_at) - Date.parse(a.started_at));
-            console.log(JSON.stringify(runs, null, 2));
             const run = descRuns[0];
-
-            //if (run) {
+            if (run) {
               // Check already exists.
-              //return run.id;
-            //}
-
+              return run.id;
+            }
             const check = await github.rest.checks.create({
               ...context.repo,
               head_sha,
@@ -46,7 +46,6 @@ jobs:
                 summary: `Synthetic check capturing the result of the <a href="${context.payload.workflow_run.html_url}">integration-test workflow run</a>`,
               }
             });
-            console.log(JSON.stringify(check, null, 2));
             return check.data.id;
   update-check:
     runs-on: ubuntu-latest
@@ -69,41 +68,11 @@ jobs:
             core.debug(`integration-test-result check runs: ${JSON.stringify(runs, null, 2)}`);
             const filtRuns = runs.filter(run => run.status !== 'completed');
             const descRuns = filtRuns.sort((a, b) => Date.parse(b.started_at) - Date.parse(a.started_at));
-            console.log(JSON.stringify(runs, null, 2));
             const run = descRuns[0];
-
-            if (true) {
-              
-            const checkx = await github.rest.checks.create({
-              ...context.repo,
-              head_sha,
-              name: "integration-test-result",
-              external_id,
-              output: {
-                title: "Integration Test Aggregate Result",
-                summary: `Synthetic check capturing the result of the <a href="${context.payload.workflow_run.html_url}">integration-test workflow run</a>`,
-              },
-              status: "completed",
-              conclusion: context.payload.workflow_run.conclusion,
-            });
-            
-            console.log(JSON.stringify(checkx, null, 2));
-            
-            const checky = await github.rest.checks.create({
-              ...context.repo,
-              head_sha,
-              name: "integration-test-result",
-              status: "in_progress",
-              external_id,
-              output: {
-                title: "Integration Test Aggregate Result",
-                summary: `Synthetic check capturing the result of the <a href="${context.payload.workflow_run.html_url}">integration-test workflow run</a>`,
-              }
-            });
-            console.log(JSON.stringify(checky, null, 2));
-            return;
+            if (!run) {
+              core.setFailed(`No integration-test-result check found for commit ${head_sha} ${external_id}`);
+              return;
             }
-
             console.log('Latest integration-test-result check run:', run.html_url)
             await github.rest.checks.update({
               ...context.repo,
