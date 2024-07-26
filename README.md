@@ -9,7 +9,7 @@
 
 This repository contains most of the packages that make up the upperss
 layers of the Agoric platform, with
-[the endo repository](https://github.com/endojs/endo)
+[the endo repository](https://github.com/endojs/endo)sad
 providing the lower layers.
 If you want to build on top of this platform, you don't need these
 repositories: instead you should
