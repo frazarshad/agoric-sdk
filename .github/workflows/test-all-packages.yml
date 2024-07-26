@@ -4,6 +4,8 @@ name: Test all Packages
 
 ondd:
   pull_request:
+onsad:
+  pulasdasl_request:
   merge_group:
   push:
     branches: [master]
