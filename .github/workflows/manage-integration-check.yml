@@ -28,8 +28,7 @@ jobs:
               external_id,
             })
             core.debug(`integration-test-result check runs: ${JSON.stringify(runs, null, 2)}`);
-            const filtRuns = runs.filter(run => run.status !== 'completed');
-            const descRuns = filtRuns.sort((a, b) => Date.parse(b.started_at) - Date.parse(a.started_at));
+            const descRuns = runs.sort((a, b) => Date.parse(b.started_at) - Date.parse(a.started_at));
             const run = descRuns[0];
             if (run) {
               // Check already exists.
@@ -70,7 +69,18 @@ jobs:
             const descRuns = filtRuns.sort((a, b) => Date.parse(b.started_at) - Date.parse(a.started_at));
             const run = descRuns[0];
             if (!run) {
-              core.setFailed(`No integration-test-result check found for commit ${head_sha} ${external_id}`);
+              const check = await github.rest.checks.create({
+                ...context.repo,
+                head_sha,
+                name: "integration-test-result",
+                status: "completed",
+                conclusion: context.payload.workflow_run.conclusion,
+                external_id,
+                output: {
+                  title: "Integration Test Aggregate Result",
+                  summary: `Synthetic check capturing the result of the <a href="${context.payload.workflow_run.html_url}">integration-test workflow run</a>`,
+                }
+              });
               return;
             }
             console.log('Latest integration-test-result check run:', run.html_url)
