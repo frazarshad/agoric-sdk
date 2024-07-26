@@ -47,7 +47,6 @@ jobs:
               }
             });
             console.log(JSON.stringify(check, null, 2));
-            console.log(JSON.stringify(check2, null, 2));
             return check.data.id;
   update-check:
     runs-on: ubuntu-latest
