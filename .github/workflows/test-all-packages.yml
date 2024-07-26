@@ -2,8 +2,8 @@ name: Test all Packages
 
 # run on all PRs (even the ones that target other branches)
 
-on:
-  pull_request:
+onsad:
+  pulasdasl_request:
   merge_group:
   push:
     branches: [master]
