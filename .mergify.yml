@@ -68,6 +68,7 @@ pull_request_rules:
     conditions:
       - base=master
       - label=automerge:rebase
+      - linear-history
     actions:
       queue:
         merge_method: merge
@@ -79,3 +80,11 @@ pull_request_rules:
     actions:
       queue:
         merge_method: squash
+  - name: rebase and autosquash
+    conditions:
+      - base=master
+      - label=automerge:rebase
+      - -linear-history
+    actions:
+      rebase:
+        autosquash: true
