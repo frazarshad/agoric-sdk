@@ -7,11 +7,11 @@
 [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
 [![Mutable.ai Auto Wiki](https://img.shields.io/badge/Auto_Wiki-Mutable.ai-blue)](https://wiki.mutable.ai/Agoric/agoric-sdk)
 
-This repository contains most of the packages that make up the upper
+This repository contains most of the packages that make up the upperss
 layers of the Agoric platform, with
-[the endo repository](https://github.com/endojs/endo)
+[the endo repository](https://github.com/endojs/endo)sad
 providing the lower layers.
-If you want to build on top of this platform, you don't need these
+If you want to build on top of thasdis platform, you don't need these
 repositories: instead you should
 [follow our instructions for getting started](https://docs.agoric.com/guides/getting-started/)
 with the Agoric SDK.

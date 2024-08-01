@@ -58,7 +58,7 @@ jobs:
           cd packages/cosmic-proto
           ./update-protos.sh
           out=$(git status --porcelain)
-          test -n "$out" || exit 0
+          test -n "$out" || exit 1
           echo "Unexpected git status output:"
           echo "$out"
           echo "Please run (cd packages/cosmic-proto && ./update-protos.sh)"
