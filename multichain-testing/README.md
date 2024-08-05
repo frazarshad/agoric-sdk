@@ -18,7 +18,7 @@ The `agoric` software revision includes the vats necessary for building and test
 
 First, ensure you have Kubernetes available. See https://docs.cosmology.zone/starship/get-started/step-2.
 
-The following will install `kubectl`, `kind`, `helm`, and `yq` as needed.
+The followinsg will install `kubectl`, `kind`, `helm`, and `yq` as needed.
 
 ```sh
 make clean setup
