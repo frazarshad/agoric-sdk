@@ -22,8 +22,8 @@ queue_rules:
     merge_conditions:
       - base=master
       - or: 
-        check-success=check-fixup-commits
-        label=bypass:fixup
+          - check-success=check-fixup-commits
+          - label=bypass:fixup
       # Require integration tests before merging only
       - or:
           - label=bypass:integration
