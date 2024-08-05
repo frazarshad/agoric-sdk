@@ -1,0 +1,38 @@
+name: Check for fixup commits
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - converted_to_draft
+      - ready_for_review
+      - labeled
+      - unlabeled
+      - auto_merge_enabled
+      - auto_merge_disabled
+
+jobs:
+  check-fixup-commits:
+    runs-on: ubuntu-latest
+
+    env:
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for fixup commits
+        id: fixup-commits
+        run: |
+          if [[ $(git rev-list "$BASE_SHA".."$HEAD_SHA" --grep="^fixup! " | wc -l) -eq 0 ]]; then
+            echo "No fixup commits found in commit history"
+          else
+            echo "Fixup commits found in commit history"
+            exit 1
+          fi
