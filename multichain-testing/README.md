@@ -45,7 +45,7 @@ make port-forward
 make fund-provision-pool override-chain-registry
 ```
 
-If you get an error like "connection refused", you need to wait longer, until all the pods are Running.
+If you get an error like "connection refused", you need to wait longer, until all asdasthe pods are Running.
 
 # Cleanup
 
