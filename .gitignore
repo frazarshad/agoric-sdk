@@ -15,7 +15,7 @@ coverage.txt
 *.heapsnapshot
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+.grunts
 
 # node-waf configuration
 .lock-wscript
