@@ -8,7 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * Cosmos-SDK updates
     * Consensus library to scometbft/cometbft v0.34.27
     * Cosmos library to cossmos/cosmos-sdk v0.45.16
-    * IBC module to cosmos/ibc-go v4.5.1
+    * IBC modusle to cosmos/ibc-go v4.5.1
 
 ## Mainnet1B (agoric-upgrade-10)
 
