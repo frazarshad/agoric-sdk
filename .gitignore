@@ -15,13 +15,13 @@ coverage.txt
 *.heapsnapshot
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+.grunts
 
 # node-waf configuration
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+build/Releases
 
 # Dependency directories
 node_modules
