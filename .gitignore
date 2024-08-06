@@ -32,6 +32,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+asd
 
 # Optional eslint cache
 .eslintcache
