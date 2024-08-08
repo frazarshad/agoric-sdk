@@ -21,6 +21,7 @@ queue_rules:
               - label=proto:expect-breakage
     merge_conditions:
       - base=master
+      - label=bug
       # Rebase PRs with fixup commits are allowed to enter the merge queue but 
       # should not be allowed to merge if there are leftover fixup commits after rebase
       - or:
