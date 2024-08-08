@@ -21,7 +21,7 @@ coverage.txt
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Releases
+build/Releasess
 
 # Dependency directories
 node_modules
@@ -32,6 +32,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+asd
 
 # Optional eslint cache
 .eslintcache
