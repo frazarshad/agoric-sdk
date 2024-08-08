@@ -3,7 +3,7 @@
 ## Supported Versions
 
 The current `master` and only the latest `agoric-upgrade-*` tagged release and pre-release are supported with security updates.
-
+s
 ## Coordinated Vulnerability Disclosure
 
 At Agoric, we believe that strong security requires strong collaboration with security researchers. If you believe that you have found a security bug in our code, we encourage you to report it. To report a bug, you can:
