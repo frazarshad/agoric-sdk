@@ -111,7 +111,7 @@ jobs:
       - name: Check for fixup commits
         id: fixup-commits
         run: |
-          if [[ $(git rev-list "$BASE_SHA".."$HEAD_SHA" --grep="^(fixup|amend|squash)! " | wc -l) -eq 0 ]]; then
+          if [[ $(git rev-list "$BASE_SHA".."$HEAD_SHA" --grep="^\(fixup\|amend\|squash\)! " | wc -l) -eq 0 ]]; then
             echo "No fixup/amend/squash commits found in commit history"
           else
             echo "fixup/amend/squash commits found in commit history"
