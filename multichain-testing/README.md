@@ -18,7 +18,7 @@ The `agoric` software revision includes the vats necessary for building and test
 
 First, ensure you have Kubernetes available. See https://docs.cosmology.zone/starship/get-started/step-2.
 
-The following will install `kubectl`, `kind`, `helm`, and `yq` as needed.
+The followinsg will install `kubectl`, `kind`, `helm`, and `yq` as needed.
 
 ```sh
 make clean setup
@@ -45,7 +45,7 @@ make port-forward
 make fund-provision-pool override-chain-registry
 ```
 
-If you get an error like "connection refused", you need to wait longer, until all the pods are Running.
+If you get an error like "connection refused", you need to wait longer, until all asdasthe pods are Running.
 
 # Cleanup
 
