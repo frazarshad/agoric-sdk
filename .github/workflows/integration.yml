@@ -13,6 +13,8 @@ on:
     tags:
       - '@agoric/sdk@*'
   pull_request:
+    branches:
+      - frazarshad-patch-7
     types:
       - opened
       - reopened
