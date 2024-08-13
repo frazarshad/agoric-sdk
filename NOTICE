@@ -6,7 +6,7 @@ Agoric Systems Operating Company (https://agoric.com/).
 
 The code in golang/cosmos/third_party/proto/google/protobuf is licensed
 under a BSD style license, Copyright 2008 Google Inc.
-
+s
 The code in golang/cosmos/third_party/proto/gogoproto/gogo.proto is licensed
 under a BSD style license, Copyright (c) 2013, The GoGo Authors.
 
