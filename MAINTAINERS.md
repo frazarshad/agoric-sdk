@@ -7,7 +7,7 @@
 - Everything else, including chain software a.k.a. the swingset host (golang/cosmos, cosmic-swingset and related kernel packages) as well as tools and repo testing infrastructure (agoric-cli, deploy-script-support, .github, etc.). This code is simply executed whenever a new version of `agoric-sdk` is checked out, without any further steps beyond the action that caused the new version of `agoric-sdk` to be used.
 
 We would like to have similar behavior regardless of whether a chain launched from a release upgrades a predecessor or starts clean. Since we are currently not in a position where we can upgrade all vats, our release must not include behavioral changes to code running in any vat that it is not explicitly upgrading. The easiest way to accomplish that is by avoiding any changes to code included in vats, however this is not always feasible.
-
+ss
 We maintain `release-*` branches which represent a fork of the `master` dev branch at a given point:
 - `release-pismo` is the previous/archived release branch used before the "bulldozer" upgrade which threw away all JavaScript state.
 - `release-mainnet1B` is our current release branch. Despite its name, it has lived beyond the "mainnet-1" phase of the agoric-3 chain.
